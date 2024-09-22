@@ -1,10 +1,10 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import './TaskList.scss'; // Agora o SCSS é importado globalmente
+import './TaskList.scss'; 
 import Modal from '../modal/modal';
 import Image from 'next/image';
-import Trash from '../../assets/Icon.png'; // Certifique-se de que o caminho está correto
+import Trash from '../../assets/Icon.png'; 
 
 export default function ToDoList() {
   const [tasks, setTasks] = useState<string[]>([]);
@@ -83,7 +83,7 @@ export default function ToDoList() {
   }
 
   return (
-    <div className="toDoList"> {/* Agora as classes são globais */}
+    <div className="toDoList"> 
       <div className="tasks">
         <p>Suas Tarefas de Hoje</p>
         <ul>

@@ -1,5 +1,5 @@
 import React from 'react';
-import './popup.scss'; // Certifique-se de que o arquivo .scss está sendo importado corretamente
+import './popup.scss'; 
 
 interface ModalProps {
   title: string;
