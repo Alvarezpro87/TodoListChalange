@@ -1,0 +1,132 @@
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.363);
+
+    display: flex;
+    font-family: "Inter Tight", sans-serif;
+    animation: slideIn 0.3s ease-in;
+
+    &.exit {
+        animation: slideOut 0.3s ease-out;
+    }
+
+    .modal-inner {
+      position: relative;
+      padding: 32px;
+      background-color: #FFF;
+      gap: 32px;
+      display: flex;
+      flex-direction: column;
+      max-width: 450px; 
+      max-height: fit-content; 
+      width: 100%; 
+      border-radius: 16px;
+      box-shadow: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+
+        .modal-title {
+            color: black;
+            font-size: 24px;
+            font-weight: 500;
+        }
+
+        .modal-content {
+            color: hsla(0, 0%, 0%, 0.54);
+            font-weight: 400;
+            font-size: 16px;
+        }
+
+        label {
+            color: black;
+        }
+
+        input[type=text]{
+            border: 1px solid #D7DDE9;
+            border-radius: 8px;
+            background-color: transparent;
+            padding: 16px;
+            color: black;
+            margin-bottom: 32px;
+
+            &:focus {
+                outline: none;
+            }
+        }
+
+        .modal-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+    }
+
+    @media (min-width:1024px){
+        background-color: rgba(255, 255, 255, 0.8);
+        align-items: center;
+        justify-content: center;
+        animation: none;
+        .modal-inner {
+            max-width: 450px;
+            max-height: fit-content;
+            border-radius: 16px;
+            box-shadow: 0px 24px 48px -12px rgba(16, 24, 40, 0.18);
+            animation: zoomIn 0.3s ease-out; 
+            transform: scale(1);
+
+            .modal-buttons {
+                flex-direction: row-reverse;
+            }
+        }
+
+        &.exit {
+            animation: zoomOut 0.3s ease-out;
+        }
+    }
+}
+
+@keyframes zoomIn {
+    0% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes zoomOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(0.5);
+      opacity: 0;
+    }
+  }
+  
+@keyframes slideIn {
+  0% {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+    0% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+    100% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+  }

@@ -1,0 +1,130 @@
+.toDoList {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 24px;
+  
+    .tasks {
+        padding: 32px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+        border: 1px solid #EAECF0;
+        border-radius: 16px;
+        width: 100%;
+        
+  
+        p {
+            color: hsla(0, 0%, 0%, 0.54);
+            text-align: center;
+            font-size: 16px;
+            font-weight: 400;
+  
+  
+        }
+        
+        ul {
+            list-style-type: none;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+  
+            li {
+                border: 2px dashed #D7DDE9;
+                border-radius: 8px;
+                padding: 16px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                animation: zoomIn 0.3s ease-out; 
+                transform: scale(1);
+  
+                &.no-task{
+                    color:black;
+                    border-color: #D7DDE9;
+                }
+  
+                &:hover {
+                    background-color: #F7F9FD;
+                }
+                
+                p {
+                    color: black;
+                    text-align: left;
+                    &.checked {
+                        text-decoration: line-through;
+                        color: hsla(0, 0%, 0%, 0.54);
+                    }
+                }
+  
+                .complete-task {
+                    min-width: 24px;
+                    min-height: 24px;
+                    appearance: none;
+                    background-color: #FFFFFF;
+                    border: 1px solid #D7DDE9;
+                    border-radius: 4px;
+                    position: relative;
+                    cursor: pointer;
+  
+                    &.checked {
+                        background-color: #A0DCF6;
+                        border-color: #0796D3;
+  
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            top: 2px;
+                            left: 5px;
+                            width: 8px;
+                            height: 12px;
+                            border: solid #0796D3;
+                            border-width: 0 2px 2px 0;
+                            transform: rotate(45deg);
+                            transition: 120ms transform ease-in-out;
+                        }
+                    }
+                }
+  
+                .delete-task:hover {
+                    cursor: pointer;
+                }
+            }
+        }
+  
+  
+    }
+  
+    @media (min-width:1024px) {
+        width: 450px ;
+        margin: auto;
+    }
+  
+  
+  }
+  
+  .button {
+    color: black;
+    width: 100%;
+    padding: 16px 24px;
+    border-radius: 8px;
+    background: #E7EEFB;
+    font-family: "Inter Tight", sans-serif;
+    outline: none;
+    border: 0;
+    cursor: pointer;
+    font-size: 16px;
+    &.alert{
+        background: linear-gradient(to right, #D30707,#F05353);
+        color: white
+    }
+  
+    &.confirm {
+        background: linear-gradient(to right, #0796D3,#53C0F0);
+        color: white;
+    }
+  }
+  
